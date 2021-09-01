@@ -1,0 +1,146 @@
+
+</div>
+</div>
+
+<!--============== Footer =============-->
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="row">              
+              <div class="col-12 text-center">
+                  <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Get In touch!</h3>
+                      <div class="f_social_icon">
+                          <a href="#" class="fab fa-facebook"></a>
+                          <a href="#" class="fab fa-twitter"></a>
+                          <a href="#" class="fab fa-linkedin"></a>
+                          <a href="#" class="fab fa-github"></a>
+                          <a href="#" class="fab fa-instagram"></a>
+                          <a href="#" class="fas fa-envelope"></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+      </div>
+  </div>
+  <div class="footer_bottom">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-6 col-sm-7">
+                  <p class="mb-0 f_400">© Ishika Bansal.. 2021 All rights reserved.</p>
+              </div>
+              <div class="col-lg-6 col-sm-5 text-right">
+                  <p>Made with <i class="bi bi-suit-heart-fill"></i>in <a href="#">India</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!--============== Footer End =============-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script>
+    // ---------Responsive-navbar-active-animation-----------
+function test(){
+  var tabsNewAnim = $('#navbarSupportedContent');
+  var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+  var activeItemNewAnim = tabsNewAnim.find('.active');
+  var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+  var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+  var itemPosNewAnimTop = activeItemNewAnim.position();
+  var itemPosNewAnimLeft = activeItemNewAnim.position();
+  $(".hori-selector").css({
+    "top":itemPosNewAnimTop.top + "px", 
+    "left":itemPosNewAnimLeft.left + "px",
+    "height": activeWidthNewAnimHeight + "px",
+    "width": activeWidthNewAnimWidth + "px"
+  });
+  $("#navbarSupportedContent").on("click","li",function(e){
+    $('#navbarSupportedContent ul li').removeClass("active");
+    $(this).addClass('active');
+    var activeWidthNewAnimHeight = $(this).innerHeight();
+    var activeWidthNewAnimWidth = $(this).innerWidth();
+    var itemPosNewAnimTop = $(this).position();
+    var itemPosNewAnimLeft = $(this).position();
+    $(".hori-selector").css({
+      "top":itemPosNewAnimTop.top + "px", 
+      "left":itemPosNewAnimLeft.left + "px",
+      "height": activeWidthNewAnimHeight + "px",
+      "width": activeWidthNewAnimWidth + "px"
+    });
+  });
+}
+$(document).ready(function(){
+  setTimeout(function(){ test(); });
+});
+$(window).on('resize', function(){
+  setTimeout(function(){ test(); }, 500);
+});
+$(".navbar-toggler").click(function(){
+  setTimeout(function(){ test(); });
+});
+
+$(document).on('click', '.nav-link', function () {
+    $(".nav-item").find(".active").removeClass("active");
+})
+
+$(document).ready(function() {
+    $('a[href="' + location.pathname + '"]').closest('.nav-item').addClass('active'); 
+});
+
+</script>
+<script>
+
+  // Some random colors
+const colors = ["#c1c6eb"];
+
+const numBalls = 10;
+const balls = [];
+
+for (let i = 0; i < numBalls; i++) {
+  let ball = document.createElement("div");
+  ball.classList.add("ball");
+  ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+  ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+  ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+  ball.style.transform = `scale(${Math.random()})`;
+  ball.style.width = `${Math.random() *10}em`;
+  ball.style.height = ball.style.width;
+  
+  balls.push(ball);
+  document.body.append(ball);
+}
+
+// Keyframes
+balls.forEach((el, i, ra) => {
+  let to = {
+    x: Math.random() * (i % 2 === 0 ? -11 : 11),
+    y: Math.random() * 12
+  };
+
+  let anim = el.animate(
+    [
+      { transform: "translate(0, 0)" },
+      { transform: `translate(${to.x}rem, ${to.y}rem)` }
+    ],
+    {
+      duration: (Math.random() + 1) * 2000, // random duration
+      direction: "alternate",
+      fill: "both",
+      iterations: Infinity,
+      easing: "ease-in-out"
+    }
+  );
+});
+
+</script>
+</body>
+</html>

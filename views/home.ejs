@@ -1,0 +1,44 @@
+<%- include("partials/header") %> 
+
+<h1 class = "main-heading">Welcome To My Blog Website!</h1>
+<p><%= homeStartingContent %></p>
+
+<br>
+<p> Glad you came by.  I wanted to welcome you and let you know I appreciate you spending time here at the blog very much.  Everyone is so busy and life moves pretty fast,  so I really do appreciate you taking time out of your busy day to check out my blog!.   Thanks.</p>
+    
+<p> I will always do my best to bring you content that will interest, inspire, motivate and maybe even have you walking away thinking about and seeing things in a different way than before you came. Life is so much fun.  So here is this blog website where you can even contribute by publishing your own blogs. Please go ahead as its free of cost!</p>
+    
+<p> I promise to be honest about me and my life, what I have experienced and who I am.</p>
+    
+<p>  Thanks for letting me.</p>
+<br>
+<p> <em>Steps To get your blogs featured on this daily Journal!</em>🙂</p>
+<ol>
+    <li>
+        Head over to "Publish Blogs".
+    </li>
+    <li>
+        Write your awesome content! Hit publish!
+    </li>
+    <li>
+        Checkout homepage! Scroll down to see your published blog. 
+    </li>
+    <li>
+        Head over to /posts/"your-blog-title" to see full blog! 
+    </li>
+</ol>
+
+<br>
+<br>
+<br>
+<h1 class = "main-heading">Blog List!</h1>
+
+<% posts.forEach(function(post){ %>
+    <img src = "/images/new.png" width = "50px"  class="new"> <h3 class = "blog-title"><%= post.title %> </h3>
+    <p class="blog-content"><%= post.content.substring(0, 100) + "..." %><a href = "/posts/<%=post.title%>">Read More</a> </p>
+    
+<% }); %>
+<div class="row-content">
+    
+</div>
+<%- include("partials/footer") %> 

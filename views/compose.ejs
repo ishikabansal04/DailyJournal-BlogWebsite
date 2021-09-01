@@ -1,0 +1,19 @@
+<%- include("partials/header") %> 
+
+<h1 class = "main-heading">Compose</h1>
+<form action="/compose" method="post">
+    <div class = "form-group">
+        <label for="Title">Title for Your Blog</label>
+        <input class = "form-control" type="text" id = "Title "name ="composeVal">
+    </div>
+    <div class = "form-group">
+        <label for="Post">Post Your Blog</label>
+        <textarea class = "form-control" type="text" id = "Post" name = "postTitle" rows = "5" cols="30"></textarea>    
+    </div>
+    <div class = "submit-button">
+        <button class = "btn btn-primary" type="submit">Publish <i class="fas fa-paper-plane"></i></button>
+    </div>
+
+</form>
+
+<%- include("partials/footer") %> 

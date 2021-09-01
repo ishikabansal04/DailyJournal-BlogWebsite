@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <link rel="stylesheet" href="/css/loader.css">
+
+</head>
+<body>
+    <span class="loader"></span>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    setTimeout(function(){
+        Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your blog is published! Check it out on homepage! Redirecting...',
+        showConfirmButton: false,
+        timer: 2500
+    })
+    .then(() => {
+        location.href = "/";
+    });
+         }, 4000);
+</script>
+</html>
